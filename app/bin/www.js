@@ -1,4 +1,6 @@
 "use strict";
+//서버 가동 파일
+
 const app = require("../app");
 
 const PORT = 3000;
