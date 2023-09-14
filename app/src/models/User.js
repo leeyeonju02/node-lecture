@@ -8,11 +8,10 @@ class User {
         this.body = body;
     }
 
-    login() {
+    async login() {
         const client = this.body;
         //UserStoarge 메소드를 호출하고 반환된 object에서 id, psword만 받아준다.
-        const { id, psword } = UserStorage.getUserInfo(client.id);
-
+        const { id, psword } = await UserStorage.getUserInfo(client.id);
         if (id) { //아이디가 true이면 
             if (id === client.id && psword === client.psword) { //아이디는 이미 트루, psword가 일치하는지 
                 return { success: true };
@@ -20,7 +19,6 @@ class User {
             return { success: false, msg: "비밀번호가 들렸습니다." };
         }
         return { success: false, msg: "존재하지 않은 아이디입니다." };
-
     }
     register() {
         const client = this.body;

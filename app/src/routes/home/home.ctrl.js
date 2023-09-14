@@ -17,10 +17,10 @@ const output = {
 }
 
 const process = {
-    login: (req, res) => {
+    login: async (req, res) => {
         //User 클래스 인스턴스화 
         const user = new User(req.body); //이 body는 User의 생성자에게 전달 
-        const response = user.login();
+        const response = await user.login();
         return res.json(response);
 
     },
