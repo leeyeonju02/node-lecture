@@ -22,7 +22,13 @@ const process = {
 
     },
 }
-
 module.exports = {
     output, process,
 }; //hello, logind을 index.js에서 사용할 수 있게 바깥으로 빼주는 역할 
+
+
+
+
+
+
+
