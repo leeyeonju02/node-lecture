@@ -31,6 +31,14 @@ class UserStorage {
         }, {});
         return userInfo; //{id:'yeon', psword:'234', name: 'rd2'}
     }
+    //회원가입 시 데이터에 유저의 정보를 저장하는 메소드 
+    static save(userInfo) {
+        const users = this.#users;
+        users.id.push(userInfo.id);
+        users.name.push(userInfo.name);
+        users.psword.push(userInfo.psword);
+
+    }
 }
 //users 변수를 정적변수로 선언함으로써 UserStorage 클래스만으로도 접근이 가능하도록 한다.
 //데이터를 쉽게 접근하도록 하는 것은 위험 : 은닉화를 해준다 

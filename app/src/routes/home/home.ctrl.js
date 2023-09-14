@@ -24,6 +24,14 @@ const process = {
         return res.json(response);
 
     },
+    register: (req, res) => {
+        //User 클래스 인스턴스화 
+        const user = new User(req.body); //이 body는 User의 생성자에게 전달 
+        const response = user.register();
+        return res.json(response);
+
+    },
+
 }
 module.exports = {
     output, process,
